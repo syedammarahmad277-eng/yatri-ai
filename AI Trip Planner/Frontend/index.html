@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yatra AI — Explore India Differently</title>
+
+    <meta
+        name="description"
+        content="Yatra AI is your intelligent travel planner for exploring India."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+
+    <header class="navbar">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">
+                <i class="fa-solid fa-compass"></i>
+            </span>
+
+            <span>Yatra<span class="logo-ai">AI</span></span>
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#planner">Plan a Trip</a>
+
+            <a href="#explore">Explore India</a>
+
+            <a href="#assistant">AI Assistant</a>
+
+            <a href="#about">About</a>
+
+        </nav>
+
+
+        <button
+            class="nav-button"
+            onclick="scrollToPlanner()"
+        >
+            Start Planning
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </header>
+
+
+    <!-- ================================
+         MOBILE NAV
+    ================================= -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#planner">Plan a Trip</a>
+
+        <a href="#explore">Explore India</a>
+
+        <a href="#assistant">AI Assistant</a>
+
+        <a href="#about">About</a>
+
+    </div>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+
+                    India's intelligent travel companion
+                </div>
+
+
+                <h1>
+                    Don't just visit India.
+                    <span>Feel it.</span>
+                </h1>
+
+
+                <p>
+                    Plan smarter journeys across every corner of India.
+                    Yatra AI finds the best routes, seasons, experiences
+                    and budgets — all in one place.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="primary-btn"
+                        onclick="scrollToPlanner()"
+                    >
+                        Plan my journey
+
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+
+
+                    <a
+                        href="#explore"
+                        class="secondary-btn"
+                    >
+                        Explore India
+
+                        <i class="fa-solid fa-compass"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>28</strong>
+                        <span>States</span>
+                    </div>
+
+                    <div>
+                        <strong>8</strong>
+                        <span>UTs</span>
+                    </div>
+
+                    <div>
+                        <strong>500+</strong>
+                        <span>Destinations</span>
+                    </div>
+
+                    <div>
+                        <strong>∞</strong>
+                        <span>Journeys</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-scroll">
+
+                <span>Scroll to discover</span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             PLANNER
+        ================================= -->
+
+        <section
+            class="planner-section"
+            id="planner"
+        >
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    AI TRIP PLANNER
+                </span>
+
+                <h2>
+                    Tell us your plan.
+                    <span>We'll do the thinking.</span>
+                </h2>
+
+                <p>
+                    Enter a few details and Yatra AI will analyze
+                    the best way to travel, when to visit and how
+                    much your journey could cost.
+                </p>
+
+            </div>
+
+
+            <div class="planner-card">
+
+                <div class="planner-top">
+
+                    <div>
+                        <span class="step-number">01</span>
+
+                        <h3>
+                            Build your journey
+                        </h3>
+                    </div>
+
+                    <span class="planner-note">
+                        Takes less than a minute
+                    </span>
+
+                </div>
+
+
+                <!-- FORM -->
+
+                <div class="form-grid">
+
+
+                    <!-- FROM -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Starting from
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <input
+                                type="text"
+                                id="fromLocation"
+                                placeholder="Delhi, Mumbai, Bengaluru..."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DESTINATION -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Going to
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-location-crosshairs"></i>
+
+                            <input
+                                type="text"
+                                id="destination"
+                                placeholder="Manali, Goa, Varanasi..."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DAYS -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Trip duration
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                            <input
+                                type="number"
+                                id="days"
+                                min="1"
+                                max="60"
+                                placeholder="5"
+                            >
+
+                            <span class="input-suffix">
+                                days
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BUDGET -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Total budget
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="rupee-symbol">
+                                ₹
+                            </span>
+
+                            <input
+                                type="number"
+                                id="budget"
+                                placeholder="20,000"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TRAVEL STYLE -->
+
+                <div class="preference-section">
+
+                    <label>
+                        What's your travel vibe?
+                    </label>
+
+                    <div class="preference-options">
+
+
+                        <button
+                            type="button"
+                            class="preference-btn active"
+                            data-style="adventure"
+                        >
+
+                            <span>🏔️</span>
+
+                            Adventure
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="preference-btn"
+                            data-style="relaxing"
+                        >
+
+                            <span>🌴</span>
+
+                            Relaxing
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="preference-btn"
+                            data-style="culture"
+                        >
+
+                            <span>🛕</span>
+
+                            Culture
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="preference-btn"
+                            data-style="food"
+                        >
+
+                            <span>🍜</span>
+
+                            Food
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="preference-btn"
+                            data-style="luxury"
+                        >
+
+                            <span>✨</span>
+
+                            Luxury
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRIORITY -->
+
+                <div class="priority-section">
+
+                    <label>
+                        What matters most to you?
+                    </label>
+
+
+                    <div class="priority-options">
+
+
+                        <label class="radio-card">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                value="cheapest"
+                                checked
+                            >
+
+                            <span class="radio-icon">
+                                💰
+                            </span>
+
+                            <span>
+                                Cheapest
+                            </span>
+
+                        </label>
+
+
+                        <label class="radio-card">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                value="fastest"
+                            >
+
+                            <span class="radio-icon">
+                                ⚡
+                            </span>
+
+                            <span>
+                                Fastest
+                            </span>
+
+                        </label>
+
+
+                        <label class="radio-card">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                value="comfort"
+                            >
+
+                            <span class="radio-icon">
+                                🛋️
+                            </span>
+
+                            <span>
+                                Comfortable
+                            </span>
+
+                        </label>
+
+
+                        <label class="radio-card">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                value="experience"
+                            >
+
+                            <span class="radio-icon">
+                                ✨
+                            </span>
+
+                            <span>
+                                Experience
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANALYZE -->
+
+                <button
+                    class="analyze-btn"
+                    id="analyzeTripBtn"
+                >
+
+                    <span>
+                        Analyze my trip
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <div class="privacy-note">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Your journey is analyzed instantly.
+                    No account required.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             ANALYSIS
+        ================================= -->
+
+        <section
+            class="analysis-section"
+            id="analysisSection"
+            hidden
+        >
+
+            <div class="section-heading dark-heading">
+
+                <span class="eyebrow">
+                    YOUR AI ANALYSIS
+                </span>
+
+                <h2>
+                    Here's how we'd
+                    <span>travel.</span>
+                </h2>
+
+                <p>
+                    We've compared your options based on
+                    budget, time, comfort and experience.
+                </p>
+
+            </div>
+
+
+            <!-- TRIP SUMMARY -->
+
+            <div class="trip-summary">
+
+
+                <div class="summary-location">
+
+                    <span>
+                        FROM
+                    </span>
+
+                    <strong id="resultFrom">
+                        Delhi
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-route">
+
+                    <span class="route-line"></span>
+
+                    <i class="fa-solid fa-plane"></i>
+
+                    <span class="route-line"></span>
+
+                </div>
+
+
+                <div class="summary-location">
+
+                    <span>
+                        DESTINATION
+                    </span>
+
+                    <strong id="resultDestination">
+                        Manali
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-stat">
+
+                    <span>
+                        DURATION
+                    </span>
+
+                    <strong id="resultDays">
+                        5 Days
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-stat">
+
+                    <span>
+                        BUDGET
+                    </span>
+
+                    <strong id="resultBudget">
+                        ₹20,000
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECOMMENDATION -->
+
+            <div class="recommendation-card">
+
+
+                <div class="recommendation-icon">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                </div>
+
+
+                <div class="recommendation-content">
+
+                    <span class="recommendation-label">
+                        YATRA AI RECOMMENDS
+                    </span>
+
+                    <h3 id="recommendedMode">
+                        Train + Bus
+                    </h3>
+
+                    <p id="recommendationReason">
+                        Best balance of cost, comfort
+                        and travel time for your trip.
+                    </p>
+
+                </div>
+
+
+                <div class="travel-score">
+
+                    <strong id="travelScore">
+                        92
+                    </strong>
+
+                    <span>
+                        /100
+                    </span>
+
+                    <small>
+                        Travel Score
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRANSPORT -->
+
+            <div class="analysis-block">
+
+                <div class="block-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            TRANSPORT
+                        </span>
+
+                        <h3>
+                            Three ways to get there.
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Compare your options.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="transport-grid"
+                    id="transportResults"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- SEASON + BUDGET -->
+
+            <div class="analysis-grid">
+
+
+                <div class="info-card">
+
+                    <div class="info-card-icon">
+                        🌤️
+                    </div>
+
+                    <span class="eyebrow">
+                        BEST TIME TO VISIT
+                    </span>
+
+                    <h3 id="bestSeason">
+                        October – February
+                    </h3>
+
+                    <p id="seasonReason">
+                        Pleasant conditions make this
+                        a great period for exploring.
+                    </p>
+
+                    <div class="season-tags">
+
+                        <span>
+                            Good weather
+                        </span>
+
+                        <span>
+                            Great visibility
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-card-icon">
+                        💰
+                    </div>
+
+                    <span class="eyebrow">
+                        ESTIMATED TOTAL
+                    </span>
+
+                    <div
+                        class="expense-total"
+                        id="totalExpense"
+                    >
+                        ₹15,000
+                    </div>
+
+                    <div class="budget-progress">
+
+                        <div
+                            class="progress-bar"
+                            id="budgetProgress"
+                        ></div>
+
+                    </div>
+
+                    <p id="budgetRemaining">
+                        ₹5,000 remaining from your budget
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPENSE BREAKDOWN -->
+
+            <div class="expense-card">
+
+                <div class="block-heading">
+
+                    <span class="eyebrow">
+                        BUDGET BREAKDOWN
+                    </span>
+
+                    <h3>
+                        Where your money goes.
+                    </h3>
+
+                </div>
+
+
+                <div class="expense-list">
+
+
+                    <div class="expense-row">
+
+                        <span>
+                            <i class="fa-solid fa-train"></i>
+                            Transportation
+                        </span>
+
+                        <strong id="transportExpense">
+                            ₹3,500
+                        </strong>
+
+                    </div>
+
+
+                    <div class="expense-row">
+
+                        <span>
+                            <i class="fa-solid fa-hotel"></i>
+                            Accommodation
+                        </span>
+
+                        <strong id="hotelExpense">
+                            ₹5,000
+                        </strong>
+
+                    </div>
+
+
+                    <div class="expense-row">
+
+                        <span>
+                            <i class="fa-solid fa-utensils"></i>
+                            Food
+                        </span>
+
+                        <strong id="foodExpense">
+                            ₹3,000
+                        </strong>
+
+                    </div>
+
+
+                    <div class="expense-row">
+
+                        <span>
+                            <i class="fa-solid fa-ticket"></i>
+                            Activities
+                        </span>
+
+                        <strong id="activityExpense">
+                            ₹2,000
+                        </strong>
+
+                    </div>
+
+
+                    <div class="expense-row">
+
+                        <span>
+                            <i class="fa-solid fa-rickshaw"></i>
+                            Local transport
+                        </span>
+
+                        <strong id="localExpense">
+                            ₹1,500
+                        </strong>
+
+                    </div>
+
+
+                    <div class="expense-row total">
+
+                        <span>
+                            Total estimated cost
+                        </span>
+
+                        <strong id="finalExpense">
+                            ₹15,000
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEW TRIP -->
+
+            <div class="new-trip-wrapper">
+
+                <button
+                    class="outline-btn"
+                    onclick="scrollToPlanner()"
+                >
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Plan another trip
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             EXPLORE INDIA
+        ================================= -->
+
+        <section
+            class="explore-section"
+            id="explore"
+        >
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    EXPLORE INDIA
+                </span>
+
+                <h2>
+                    From the Himalayas
+                    <span>to the sea.</span>
+                </h2>
+
+                <p>
+                    Discover famous landmarks, hidden villages,
+                    peaceful beaches and unforgettable experiences.
+                </p>
+
+            </div>
+
+
+            <div class="destination-grid">
+
+
+                <article
+                    class="destination-card himachal"
+                    data-destination="Manali"
+                >
+
+                    <div class="destination-overlay"></div>
+
+                    <div class="destination-content">
+
+                        <span>
+                            HIMACHAL PRADESH
+                        </span>
+
+                        <h3>
+                            Manali
+                        </h3>
+
+                        <p>
+                            Mountains · Snow · Adventure
+                        </p>
+
+                        <button
+                            onclick="selectDestination('Manali')"
+                        >
+                            Plan this trip
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="destination-card goa"
+                    data-destination="Goa"
+                >
+
+                    <div class="destination-overlay"></div>
+
+                    <div class="destination-content">
+
+                        <span>
+                            GOA
+                        </span>
+
+                        <h3>
+                            Goa
+                        </h3>
+
+                        <p>
+                            Beaches · Sunsets · Culture
+                        </p>
+
+                        <button
+                            onclick="selectDestination('Goa')"
+                        >
+                            Plan this trip
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="destination-card rajasthan"
+                    data-destination="Rajasthan"
+                >
+
+                    <div class="destination-overlay"></div>
+
+                    <div class="destination-content">
+
+                        <span>
+                            RAJASTHAN
+                        </span>
+
+                        <h3>
+                            Rajasthan
+                        </h3>
+
+                        <p>
+                            Forts · Desert · Heritage
+                        </p>
+
+                        <button
+                            onclick="selectDestination('Rajasthan')"
+                        >
+                            Plan this trip
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="destination-card kerala"
+                    data-destination="Kerala"
+                >
+
+                    <div class="destination-overlay"></div>
+
+                    <div class="destination-content">
+
+                        <span>
+                            KERALA
+                        </span>
+
+                        <h3>
+                            Kerala
+                        </h3>
+
+                        <p>
+                            Backwaters · Nature · Food
+                        </p>
+
+                        <button
+                            onclick="selectDestination('Kerala')"
+                        >
+                            Plan this trip
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="explore-more">
+
+                <button class="outline-dark-btn">
+
+                    Explore all of India
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             AI ASSISTANT
+        ================================= -->
+
+        <section
+            class="assistant-section"
+            id="assistant"
+        >
+
+            <div class="assistant-wrapper">
+
+
+                <div class="assistant-copy">
+
+                    <span class="eyebrow">
+                        YATRA AI ASSISTANT
+                    </span>
+
+                    <h2>
+                        Have a travel question?
+                        <span>Just ask.</span>
+                    </h2>
+
+                    <p>
+                        Ask anything about travelling in India.
+                        From hidden places to local food,
+                        transport and trip ideas.
+                    </p>
+
+
+                    <div class="suggestion-list">
+
+                        <button
+                            onclick="askSuggestion('Plan a 5 day trip to Spiti')"
+                        >
+                            Plan a 5 day trip to Spiti
+                        </button>
+
+                        <button
+                            onclick="askSuggestion('Best hidden places in Meghalaya')"
+                        >
+                            Best hidden places in Meghalaya
+                        </button>
+
+                        <button
+                            onclick="askSuggestion('Cheap trips near Delhi')"
+                        >
+                            Cheap trips near Delhi
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chat-card">
+
+                    <div class="chat-header">
+
+                        <div class="ai-avatar">
+                            ✦
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Yatra AI
+                            </strong>
+
+                            <span>
+                                Online · Ready to help
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="chat-messages"
+                        id="chatMessages"
+                    >
+
+                        <div class="chat-message ai">
+
+                            <span class="chat-avatar">
+                                ✦
+                            </span>
+
+                            <div>
+                                Hey! I'm your India travel
+                                assistant. Where would you
+                                like to go? 🇮🇳
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chat-input-wrapper">
+
+                        <input
+                            type="text"
+                            id="chatInput"
+                            placeholder="Ask me anything about India..."
+                        >
+
+                        <button id="chatSend">
+
+                            <i class="fa-solid fa-arrow-up"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             ABOUT
+        ================================= -->
+
+        <section
+            class="about-section"
+            id="about"
+        >
+
+            <div>
+
+                <span class="eyebrow">
+                    WHY YATRA AI
+                </span>
+
+                <h2>
+                    India is not one destination.
+                    <span>It's millions of stories.</span>
+                </h2>
+
+            </div>
+
+
+            <p>
+                Yatra AI brings India's enormous travel landscape
+                together with intelligent trip planning. From
+                major cities to small villages and hidden gems,
+                we're building a smarter way to discover the country.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div>
+
+                <a href="#" class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </span>
+
+                    Yatra<span class="logo-ai">AI</span>
+
+                </a>
+
+                <p>
+                    Explore India differently.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#planner">
+                    Plan a Trip
+                </a>
+
+                <a href="#explore">
+                    Explore
+                </a>
+
+                <a href="#assistant">
+                    AI Assistant
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Yatra AI
+            </span>
+
+            <span>
+                Made for explorers 🇮🇳
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
