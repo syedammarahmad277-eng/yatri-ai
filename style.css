@@ -1,0 +1,2656 @@
+/* =========================================================
+   YATRA AI
+   PREMIUM TRAVEL WEBSITE
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --orange: #e76f51;
+    --orange-light: #f4a261;
+
+    --black: #111111;
+    --dark: #151515;
+    --dark-card: #1d1d1d;
+
+    --white: #ffffff;
+    --cream: #f7f5f0;
+
+    --text: #191919;
+    --muted: #777777;
+
+    --border: #e5e2dc;
+
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 30px;
+
+    --shadow:
+        0 25px 70px rgba(0,0,0,.08);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: "DM Sans", sans-serif;
+
+    background: var(--cream);
+
+    color: var(--text);
+
+    overflow-x: hidden;
+
+}
+
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 78px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    color: white;
+
+    background: rgba(10,10,10,.25);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+}
+
+
+.logo-icon {
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: var(--orange);
+
+    color: white;
+
+}
+
+
+.logo-ai {
+    color: var(--orange-light);
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    gap: 35px;
+
+    font-size: 14px;
+
+    color: rgba(255,255,255,.85);
+
+}
+
+
+.nav-links a {
+
+    transition: .25s ease;
+
+}
+
+
+.nav-links a:hover {
+
+    color: white;
+
+}
+
+
+.nav-button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 18px;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    border-radius: 100px;
+
+    background: rgba(255,255,255,.08);
+
+    color: white;
+
+    transition: .25s ease;
+
+}
+
+
+.nav-button:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+.mobile-menu-btn {
+
+    display: none;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 22px;
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+
+    position: fixed;
+
+    top: 78px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px;
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    background: #111;
+
+    color: white;
+
+    z-index: 999;
+
+}
+
+
+.mobile-menu.active {
+
+    display: flex;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.65)
+        ),
+
+        url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=2000&q=85")
+        center / cover;
+
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            transparent 0,
+            rgba(0,0,0,.4) 80%
+        );
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    max-width: 1000px;
+
+    padding: 120px 25px 80px;
+
+    z-index: 2;
+
+}
+
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 15px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    border-radius: 100px;
+
+    background: rgba(255,255,255,.08);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 12px;
+
+}
+
+
+.pulse-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #67d48b;
+
+    box-shadow:
+        0 0 0 5px rgba(103,212,139,.15);
+
+}
+
+
+.hero h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 8vw, 105px);
+
+    line-height: .95;
+
+    letter-spacing: -5px;
+
+    font-weight: 600;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: #f4a261;
+
+    font-style: italic;
+
+}
+
+
+.hero p {
+
+    max-width: 680px;
+
+    margin: 30px auto;
+
+    color: rgba(255,255,255,.78);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.primary-btn,
+.secondary-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 22px;
+
+    border-radius: 100px;
+
+    font-weight: 700;
+
+    transition: .3s ease;
+
+}
+
+
+.primary-btn {
+
+    border: none;
+
+    background: var(--orange);
+
+    color: white;
+
+}
+
+
+.primary-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(231,111,81,.3);
+
+}
+
+
+.secondary-btn {
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    background: rgba(255,255,255,.08);
+
+    color: white;
+
+}
+
+
+.secondary-btn:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+.hero-stats {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 45px;
+
+    margin-top: 65px;
+
+}
+
+
+.hero-stats div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.hero-stats strong {
+
+    font-size: 22px;
+
+}
+
+
+.hero-stats span {
+
+    font-size: 11px;
+
+    color: rgba(255,255,255,.5);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.hero-scroll {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    align-items: center;
+
+    color: rgba(255,255,255,.5);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.hero-scroll i {
+
+    animation: bounce 1.5s infinite;
+
+}
+
+
+@keyframes bounce {
+
+    50% {
+        transform: translateY(5px);
+    }
+
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+section {
+
+    position: relative;
+
+}
+
+
+.planner-section {
+
+    padding: 130px 5%;
+
+    background: var(--cream);
+
+}
+
+
+.section-heading {
+
+    max-width: 800px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+
+}
+
+
+.eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: var(--orange);
+
+}
+
+
+.section-heading h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+}
+
+
+.section-heading h2 span {
+
+    color: var(--orange);
+
+    font-style: italic;
+
+}
+
+
+.section-heading p {
+
+    max-width: 650px;
+
+    margin: 22px auto 0;
+
+    color: var(--muted);
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   PLANNER CARD
+========================================================= */
+
+.planner-card {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.planner-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.planner-top > div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.step-number {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #f9e5df;
+
+    color: var(--orange);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.planner-top h3 {
+
+    font-size: 23px;
+
+}
+
+
+.planner-note {
+
+    color: #999;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 22px;
+
+}
+
+
+.input-group label,
+.preference-section > label,
+.priority-section > label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.input-box {
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 18px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 15px;
+
+    background: #fafafa;
+
+    transition: .25s ease;
+
+}
+
+
+.input-box:focus-within {
+
+    background: white;
+
+    border-color: var(--orange);
+
+    box-shadow:
+        0 0 0 4px rgba(231,111,81,.09);
+
+}
+
+
+.input-box > i {
+
+    color: var(--orange);
+
+}
+
+
+.input-box input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 15px;
+
+}
+
+
+.input-suffix {
+
+    color: #999;
+
+    white-space: nowrap;
+
+}
+
+
+.rupee-symbol {
+
+    font-weight: 700;
+
+    color: var(--orange);
+
+}
+
+
+/* =========================================================
+   PREFERENCES
+========================================================= */
+
+.preference-section {
+
+    margin-top: 35px;
+
+}
+
+
+.preference-options {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.preference-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 17px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 100px;
+
+    background: white;
+
+    color: #555;
+
+    transition: .25s ease;
+
+}
+
+
+.preference-btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.preference-btn.active {
+
+    background: #111;
+
+    border-color: #111;
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   PRIORITY
+========================================================= */
+
+.priority-section {
+
+    margin-top: 35px;
+
+}
+
+
+.priority-options {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 12px;
+
+}
+
+
+.radio-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition: .25s ease;
+
+}
+
+
+.radio-card:hover {
+
+    border-color: var(--orange);
+
+}
+
+
+.radio-card input {
+
+    accent-color: var(--orange);
+
+}
+
+
+.radio-icon {
+
+    font-size: 18px;
+
+}
+
+
+/* =========================================================
+   ANALYZE BUTTON
+========================================================= */
+
+.analyze-btn {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    margin-top: 35px;
+
+    padding: 18px 25px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: .3s ease;
+
+}
+
+
+.analyze-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.15);
+
+}
+
+
+.analyze-btn:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+}
+
+
+.privacy-note {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 15px;
+
+    color: #999;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   ANALYSIS SECTION
+========================================================= */
+
+.analysis-section {
+
+    padding: 130px 5%;
+
+    background: #111;
+
+    color: white;
+
+}
+
+
+.dark-heading p {
+
+    color: #888;
+
+}
+
+
+/* =========================================================
+   TRIP SUMMARY
+========================================================= */
+
+.trip-summary {
+
+    max-width: 1100px;
+
+    margin: 0 auto 20px;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    border: 1px solid #2c2c2c;
+
+    border-radius: 22px;
+
+    background: #181818;
+
+}
+
+
+.summary-location {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.summary-location span,
+.summary-stat span {
+
+    color: #666;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.summary-location strong,
+.summary-stat strong {
+
+    font-size: 17px;
+
+}
+
+
+.summary-route {
+
+    display: flex;
+
+    align-items: center;
+
+    flex: 1;
+
+    gap: 10px;
+
+    color: var(--orange);
+
+}
+
+
+.route-line {
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #333;
+
+}
+
+
+.summary-divider {
+
+    width: 1px;
+
+    height: 35px;
+
+    background: #333;
+
+}
+
+
+.summary-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+/* =========================================================
+   RECOMMENDATION
+========================================================= */
+
+.recommendation-card {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    border: 1px solid #333;
+
+    border-radius: 25px;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(231,111,81,.12),
+            transparent 40%
+        ),
+
+        #191919;
+
+}
+
+
+.recommendation-icon {
+
+    width: 62px;
+    height: 62px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 18px;
+
+    background: var(--orange);
+
+    color: white;
+
+    font-size: 23px;
+
+}
+
+
+.recommendation-content {
+
+    flex: 1;
+
+}
+
+
+.recommendation-label {
+
+    color: var(--orange);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.recommendation-content h3 {
+
+    margin: 5px 0;
+
+    font-size: 28px;
+
+}
+
+
+.recommendation-content p {
+
+    color: #888;
+
+    line-height: 1.5;
+
+}
+
+
+.travel-score {
+
+    min-width: 120px;
+
+    text-align: center;
+
+}
+
+
+.travel-score strong {
+
+    font-size: 45px;
+
+}
+
+
+.travel-score span {
+
+    color: #777;
+
+}
+
+
+.travel-score small {
+
+    display: block;
+
+    color: #666;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   TRANSPORT
+========================================================= */
+
+.analysis-block {
+
+    max-width: 1100px;
+
+    margin: 75px auto 0;
+
+}
+
+
+.block-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 25px;
+
+}
+
+
+.block-heading h3 {
+
+    font-size: 28px;
+
+}
+
+
+.block-heading > p {
+
+    color: #666;
+
+}
+
+
+.transport-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 17px;
+
+}
+
+
+.transport-card {
+
+    position: relative;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    border: 1px solid #292929;
+
+    border-radius: 23px;
+
+    background: #191919;
+
+    transition: .3s ease;
+
+}
+
+
+.transport-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #444;
+
+}
+
+
+.transport-card.recommended {
+
+    border-color: var(--orange);
+
+}
+
+
+.transport-card.recommended::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--orange);
+
+}
+
+
+.transport-icon {
+
+    font-size: 30px;
+
+}
+
+
+.transport-card h4 {
+
+    margin: 18px 0 5px;
+
+    font-size: 20px;
+
+}
+
+
+.transport-price {
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+}
+
+
+.transport-time {
+
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+.transport-score {
+
+    margin-top: 20px;
+
+    color: var(--orange);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.recommended-label {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 6px 9px;
+
+    border-radius: 100px;
+
+    background: rgba(231,111,81,.12);
+
+    color: var(--orange);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .7px;
+
+}
+
+
+/* =========================================================
+   INFO CARDS
+========================================================= */
+
+.analysis-grid {
+
+    max-width: 1100px;
+
+    margin: 20px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 20px;
+
+}
+
+
+.info-card,
+.expense-card {
+
+    padding: 30px;
+
+    border: 1px solid #292929;
+
+    border-radius: 23px;
+
+    background: #191919;
+
+}
+
+
+.info-card-icon {
+
+    margin-bottom: 20px;
+
+    font-size: 30px;
+
+}
+
+
+.info-card h3 {
+
+    margin: 7px 0;
+
+    font-size: 27px;
+
+}
+
+
+.info-card p {
+
+    color: #777;
+
+    line-height: 1.6;
+
+}
+
+
+.season-tags {
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.season-tags span {
+
+    padding: 7px 10px;
+
+    border-radius: 100px;
+
+    background: #222;
+
+    color: #888;
+
+    font-size: 10px;
+
+}
+
+
+.expense-total {
+
+    margin: 8px 0 18px;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+}
+
+
+.budget-progress {
+
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #2c2c2c;
+
+}
+
+
+.progress-bar {
+
+    width: 0;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--orange);
+
+    transition: width 1s ease;
+
+}
+
+
+/* =========================================================
+   EXPENSE
+========================================================= */
+
+.expense-card {
+
+    max-width: 1100px;
+
+    margin: 20px auto 0;
+
+}
+
+
+.expense-list {
+
+    margin-top: 20px;
+
+}
+
+
+.expense-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #292929;
+
+    color: #777;
+
+}
+
+
+.expense-row span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.expense-row i {
+
+    color: var(--orange);
+
+}
+
+
+.expense-row strong {
+
+    color: white;
+
+}
+
+
+.expense-row.total {
+
+    border-bottom: none;
+
+    padding-top: 25px;
+
+    color: white;
+
+    font-size: 16px;
+
+}
+
+
+.expense-row.total strong {
+
+    color: var(--orange);
+
+    font-size: 23px;
+
+}
+
+
+/* =========================================================
+   NEW TRIP
+========================================================= */
+
+.new-trip-wrapper {
+
+    max-width: 1100px;
+
+    margin: 35px auto 0;
+
+    text-align: center;
+
+}
+
+
+.outline-btn {
+
+    padding: 13px 20px;
+
+    border: 1px solid #444;
+
+    border-radius: 100px;
+
+    background: transparent;
+
+    color: white;
+
+    transition: .25s ease;
+
+}
+
+
+.outline-btn:hover {
+
+    border-color: var(--orange);
+
+    color: var(--orange);
+
+}
+
+
+/* =========================================================
+   EXPLORE
+========================================================= */
+
+.explore-section {
+
+    padding: 130px 5%;
+
+    background: #f7f5f0;
+
+}
+
+
+.destination-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 15px;
+
+}
+
+
+.destination-card {
+
+    min-height: 500px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: end;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    background-position: center;
+
+    background-size: cover;
+
+    transition: .5s ease;
+
+}
+
+
+.destination-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+.destination-card.himachal {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80");
+
+}
+
+
+.destination-card.goa {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1000&q=80");
+
+}
+
+
+.destination-card.rajasthan {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1000&q=80");
+
+}
+
+
+.destination-card.kerala {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1000&q=80");
+
+}
+
+
+.destination-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 25%,
+            rgba(0,0,0,.85)
+        );
+
+}
+
+
+.destination-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.destination-content > span {
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: rgba(255,255,255,.65);
+
+}
+
+
+.destination-content h3 {
+
+    margin: 5px 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 35px;
+
+}
+
+
+.destination-content p {
+
+    color: rgba(255,255,255,.7);
+
+    font-size: 12px;
+
+}
+
+
+.destination-content button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.destination-content button i {
+
+    color: var(--orange);
+
+}
+
+
+.explore-more {
+
+    margin-top: 40px;
+
+    text-align: center;
+
+}
+
+
+.outline-dark-btn {
+
+    padding: 14px 20px;
+
+    border: 1px solid #222;
+
+    border-radius: 100px;
+
+    background: transparent;
+
+    transition: .25s ease;
+
+}
+
+
+.outline-dark-btn:hover {
+
+    background: #111;
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   AI ASSISTANT
+========================================================= */
+
+.assistant-section {
+
+    padding: 130px 5%;
+
+    background: #111;
+
+    color: white;
+
+}
+
+
+.assistant-wrapper {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.assistant-copy h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px,5vw,65px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+}
+
+
+.assistant-copy h2 span {
+
+    display: block;
+
+    color: var(--orange);
+
+    font-style: italic;
+
+}
+
+
+.assistant-copy > p {
+
+    margin: 25px 0;
+
+    color: #888;
+
+    line-height: 1.7;
+
+}
+
+
+.suggestion-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.suggestion-list button {
+
+    padding: 12px 15px;
+
+    text-align: left;
+
+    border: 1px solid #292929;
+
+    border-radius: 12px;
+
+    background: #181818;
+
+    color: #999;
+
+    transition: .25s ease;
+
+}
+
+
+.suggestion-list button:hover {
+
+    color: white;
+
+    border-color: #444;
+
+}
+
+
+/* =========================================================
+   CHAT
+========================================================= */
+
+.chat-card {
+
+    overflow: hidden;
+
+    border: 1px solid #292929;
+
+    border-radius: 25px;
+
+    background: #181818;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.3);
+
+}
+
+
+.chat-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    border-bottom: 1px solid #292929;
+
+}
+
+
+.ai-avatar {
+
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: var(--orange);
+
+}
+
+
+.chat-header div:last-child {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+}
+
+
+.chat-header strong {
+
+    font-size: 14px;
+
+}
+
+
+.chat-header span {
+
+    color: #666;
+
+    font-size: 10px;
+
+}
+
+
+.chat-messages {
+
+    min-height: 300px;
+
+    max-height: 350px;
+
+    overflow-y: auto;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.chat-message {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+}
+
+
+.chat-message > div {
+
+    max-width: 80%;
+
+    padding: 12px 14px;
+
+    border-radius: 14px;
+
+    background: #222;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.chat-message.user {
+
+    justify-content: flex-end;
+
+}
+
+
+.chat-message.user > div {
+
+    background: var(--orange);
+
+    color: white;
+
+}
+
+
+.chat-avatar {
+
+    width: 25px;
+    height: 25px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    background: #292929;
+
+    font-size: 10px;
+
+}
+
+
+.chat-input-wrapper {
+
+    display: flex;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    border-top: 1px solid #292929;
+
+}
+
+
+.chat-input-wrapper input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    background: #222;
+
+    color: white;
+
+}
+
+
+.chat-input-wrapper button {
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--orange);
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+
+    padding: 120px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+    background: var(--orange);
+
+    color: white;
+
+}
+
+
+.about-section h2 {
+
+    max-width: 700px;
+
+    margin-top: 10px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px,5vw,65px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+}
+
+
+.about-section h2 span {
+
+    display: block;
+
+    color: #222;
+
+    font-style: italic;
+
+}
+
+
+.about-section > p {
+
+    max-width: 500px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: rgba(255,255,255,.8);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding: 60px 5% 25px;
+
+    background: #0d0d0d;
+
+    color: white;
+
+}
+
+
+.footer-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-bottom: 45px;
+
+    border-bottom: 1px solid #222;
+
+}
+
+
+.footer-logo {
+
+    margin-bottom: 15px;
+
+}
+
+
+.footer-top p {
+
+    color: #666;
+
+    font-size: 13px;
+
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    gap: 25px;
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+.footer-links a:hover {
+
+    color: white;
+
+}
+
+
+.footer-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 25px;
+
+    color: #555;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links,
+    .nav-button {
+
+        display: none;
+
+    }
+
+
+    .mobile-menu-btn {
+
+        display: block;
+
+    }
+
+
+    .destination-grid {
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+
+    .assistant-wrapper {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .hero h1 {
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .hero-stats {
+
+        gap: 20px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .planner-card {
+
+        padding: 25px;
+
+    }
+
+
+    .planner-top {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .priority-options {
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+
+    .trip-summary {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .summary-route {
+
+        order: 3;
+
+        width: 100%;
+
+    }
+
+
+    .summary-divider {
+
+        display: none;
+
+    }
+
+
+    .transport-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .analysis-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .recommendation-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .travel-score {
+
+        text-align: left;
+
+    }
+
+
+    .destination-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .destination-card {
+
+        min-height: 400px;
+
+    }
+
+
+    .about-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .footer-top,
+    .footer-bottom {
+
+        flex-direction: column;
+
+    }
+
+
+    .footer-links {
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .hero-content {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 48px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 15px;
+
+    }
+
+
+    .hero-stats {
+
+        gap: 15px;
+
+    }
+
+
+    .section-heading h2 {
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .priority-options {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .preference-options {
+
+        flex-direction: column;
+
+    }
+
+
+    .preference-btn {
+
+        justify-content: center;
+
+    }
+
+}
